@@ -14,6 +14,7 @@
 		68AC96502181CFE500F71AC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AC964E2181CFE500F71AC3 /* LaunchScreen.storyboard */; };
 		68AC965B2181CFE500F71AC3 /* Assignment_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC965A2181CFE500F71AC3 /* Assignment_GameTests.swift */; };
 		68AC96662181CFE500F71AC3 /* Assignment_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC96652181CFE500F71AC3 /* Assignment_GameUITests.swift */; };
+		68AC96762181DDE400F71AC3 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 68AC96752181DDE400F71AC3 /* test.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		68AC96612181CFE500F71AC3 /* Assignment GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Assignment GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AC96652181CFE500F71AC3 /* Assignment_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment_GameUITests.swift; sourceTree = "<group>"; };
 		68AC96672181CFE500F71AC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68AC96752181DDE400F71AC3 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = ../test.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		68AC96392181CFE500F71AC3 = {
 			isa = PBXGroup;
 			children = (
+				68AC96752181DDE400F71AC3 /* test.png */,
 				68AC96442181CFE500F71AC3 /* Assignment Game */,
 				68AC96592181CFE500F71AC3 /* Assignment GameTests */,
 				68AC96642181CFE500F71AC3 /* Assignment GameUITests */,
@@ -235,6 +238,7 @@
 				68AC96502181CFE500F71AC3 /* LaunchScreen.storyboard in Resources */,
 				68AC964D2181CFE500F71AC3 /* Assets.xcassets in Resources */,
 				68AC964B2181CFE500F71AC3 /* Main.storyboard in Resources */,
+				68AC96762181DDE400F71AC3 /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
