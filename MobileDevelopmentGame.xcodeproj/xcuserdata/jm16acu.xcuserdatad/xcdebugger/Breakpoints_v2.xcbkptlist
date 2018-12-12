@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileDevelopmentGame/ViewController.swift"
+            timestampString = "565893111.167506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileDevelopmentGame.ViewController.hudView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "MobileDevelopmentGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/PUSER3/UH-User3/jm16acu/Uni%20Year%203/MobDev/Game%20Final%20Assignment/MobileDevelopmentGame/MobileDevelopmentGame/ViewController.swift"
+                  timestampString = "565893142.872106"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileDevelopmentGame.ViewController.hudView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "MobileDevelopmentGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/PUSER3/UH-User3/jm16acu/Uni%20Year%203/MobDev/Game%20Final%20Assignment/MobileDevelopmentGame/MobileDevelopmentGame/ViewController.swift"
+                  timestampString = "565893142.874222"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileDevelopmentGame.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MobileDevelopmentGame.ViewController"
+                  moduleName = "MobileDevelopmentGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/PUSER3/UH-User3/jm16acu/Uni%20Year%203/MobDev/Game%20Final%20Assignment/MobileDevelopmentGame/MobileDevelopmentGame/ViewController.swift"
+                  timestampString = "565893142.876289"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "643">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MobileDevelopmentGame.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MobileDevelopmentGame.ViewController&gt;"
+                  moduleName = "MobileDevelopmentGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/PUSER3/UH-User3/jm16acu/Uni%20Year%203/MobDev/Game%20Final%20Assignment/MobileDevelopmentGame/MobileDevelopmentGame/ViewController.swift"
+                  timestampString = "565893142.878207"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "569">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
