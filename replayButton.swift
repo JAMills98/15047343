@@ -1,16 +1,15 @@
 //
-//  BirdCoinLooper.swift
+//  replayButton.swift
 //  MobileDevelopmentGame
 //
-//  Created by jm16acu on 14/12/2018.
+//  Created by jm16acu on 17/12/2018.
 //  Copyright © 2018 JackMills. All rights reserved.
-//  Purpose: This is the code that loops over birds and coins; because they share code, but different collision beheaviour
-//  Function: First, spawn them somewhere off the right side of the screen, then constantly move them left at a random speed; once my X is -WIDTH, Teleport back again
+//
 
-import UIKit
+import Foundation
 
-class BirdCoinLooper: UIImageView {
-
+class replayButton: UIImageView {
+    
     
     var movX = CGFloat(arc4random_uniform(4) + 2);
     var isIntagiable = false
@@ -37,7 +36,5 @@ class BirdCoinLooper: UIImageView {
         self.movX = CGFloat(arc4random_uniform(5) + 3);
         
     }
-
     
 }
-

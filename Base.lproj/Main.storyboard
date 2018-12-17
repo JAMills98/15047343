@@ -12,7 +12,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MobileDevelopmentGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
@@ -30,8 +29,9 @@
                         <outlet property="playerView" destination="qE0-HG-G0O" id="R2J-UZ-LnL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="19"/>
+            <point key="canvasLocation" x="-2.5" y="18.5"/>
         </scene>
     </scenes>
     <resources>

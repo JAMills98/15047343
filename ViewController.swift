@@ -13,6 +13,8 @@ let DW = UIScreen.main.bounds.width
 let DH = UIScreen.main.bounds.height
 
 
+
+
 class ViewController: UIViewController {
 	
 	// Programmatic Player
@@ -22,6 +24,9 @@ class ViewController: UIViewController {
 	
 	
 	@IBOutlet var playerView: UIImageView!
+	@IBOutlet var gameOverView: UIImageView!
+	
+	
 	
 	
 	
@@ -35,12 +40,17 @@ class ViewController: UIViewController {
     }
     
 
+	// Cant get gravity collision
+	var PLAYER_SCORE = 0
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+
 		view.backgroundColor = UIColor.cyan
-		
-		
 		// Add dynamic collisions between player and birds?
+		
+		
+		
 		
 		
 		// Force landscape mode
@@ -55,11 +65,29 @@ class ViewController: UIViewController {
 		view.addSubview(playerView)
 		
 		
+		// Gameover screen
+		let gameOverView = UIImageView(image: UIImage(named: "replay.png"))
+		gameOverView.frame = CGRect(x:DW * 2, y:DH - DH/2, width: DW/2, height: DH/4)
+		gameOverView.isUserInteractionEnabled = false
 		
+		let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapDetected))
+		singleTap.numberOfTapsRequired = 1;
+		gameOverView.addGestureRecognizer(singleTap)
+		
+		
+		
+	
+
+
+
 		// Road OBJ; Road is W x H
 		let roadView = UIImageView(image: UIImage(named:"road1.png"))
 		roadView.frame = CGRect(x:0, y:0, width: DW, height: DH)
 		view.addSubview(roadView)
+		
+		let fakeRoad = UIImageView(image: UIImage(named:"road1.png"))
+		fakeRoad.frame = CGRect(x:0, y:0, width: DW, height: DH)
+		view.addSubview(fakeRoad)
 		
 		// Tree View; for trees, there are TWO tree images
 		let treeView = UIImageView(image: UIImage(named: "tree1.png"))
@@ -71,24 +99,9 @@ class ViewController: UIViewController {
 		treeView2.frame = CGRect(x: DW, y: 0, width: DW, height: DH)
 		view.addSubview(treeView2)
 		
-		UIView.animate(withDuration: 3.33, delay: 0.25, options: [UIViewAnimationOptions.repeat, .curveLinear], animations:
-			{
-				treeView.center.x -= treeView.bounds.width
-				
-		}, completion: nil
-		)
-		
-		UIView.animate(withDuration: 3.33, delay: 0.25, options: [UIViewAnimationOptions.repeat, .curveLinear], animations:
-			{
-				treeView2.center.x -= treeView2.bounds.width
-				
-		}, completion: nil
-		)
-		
-		
 		var birdArray: [BirdCoinLooper] = []
-
-		for x in 0...6 {
+		
+		for x in 0...8 {
 			let imageView = BirdCoinLooper(image: UIImage(named: "bird1.png"))
 			var RNG = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
 			
@@ -102,7 +115,7 @@ class ViewController: UIViewController {
 		
 		
 		var coinArray: [BirdCoinLooper] = []
-		for x in 0...4 {
+		for x in 0...3 {
 			let imageView = BirdCoinLooper(image: UIImage(named: "coin.png"))
 			var RNG = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
 			imageView.frame = CGRect(x: DW + DW * RNG, y: DH * RNG, width: DW * 0.1, height: DH * 0.1)
@@ -111,13 +124,24 @@ class ViewController: UIViewController {
 		}
 
 		
-        // Timer Code
-        let when = DispatchTime.now() + 20
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            // This is the timeOver Code
-        }
 		
 		
+
+		// IF Game is over, enable the clickbox to make gamestate 0 and reset score
+		UIView.animate(withDuration: 3.33, delay: 0.25, options: [UIViewAnimationOptions.repeat, .curveLinear], animations:
+			{
+				treeView.center.x -= treeView.bounds.width
+				
+		}, completion: nil
+		)
+		
+		UIView.animate(withDuration: 3.33, delay: 0.25, options: [UIViewAnimationOptions.repeat, .curveLinear], animations:
+			{
+				treeView2.center.x -= treeView2.bounds.width
+				
+		}, completion: nil
+		)
+
 		view.bringSubview(toFront: playerView)
         var playerAnim: [UIImage]!
         playerAnim = [UIImage(named: "plane1.png")!,
@@ -166,6 +190,10 @@ class ViewController: UIViewController {
 		            UIImage(named: "bird10.png")!]
 		
 		
+		// For coins and birds, there's a collision that activates based on proximity to the player
+		// Both of them fall down; if they're off-screen, it re-teleports them
+		
+		
 		// On every bird, move them left
 		for x in birdArray {
 			x.image = UIImage.animatedImage(with: birdAnim, duration: 0.3)
@@ -174,14 +202,25 @@ class ViewController: UIViewController {
 		
 		// Animate coins
 		for x in coinArray {
-			Timer.scheduledTimer(timeInterval: 1/20, target: x, selector: Selector("move"), userInfo: nil, repeats: true)
+			Timer.scheduledTimer(timeInterval: 1/60, target: x, selector: Selector("move"), userInfo: nil, repeats: true)
 			
 		}
-		
+
+		// Timer after 20 seconds
+		let when = DispatchTime.now() + 20
+		DispatchQueue.main.asyncAfter(deadline: when) {
+			gameOverView.frame = CGRect(x:DW - DW/2, y:DH - DH/2, width: DW/2, height: DH/4)
+			gameOverView.isUserInteractionEnabled = true
+			self.view.addSubview(gameOverView)
+			self.view.bringSubview(toFront: fakeRoad)
+			self.view.bringSubview(toFront: gameOverView)
+		}
 		
 		
     }
 
+	
+	
 	
 
 
@@ -189,6 +228,13 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	// Literally resets the game
+		func tapDetected() {
+			self.viewDidLoad()
+		}
+	
+	
 
 
 }
