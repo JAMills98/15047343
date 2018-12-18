@@ -22,7 +22,18 @@ class BirdCoinLooper: UIImageView {
             self.teleport()
         }
         
-        // IF I collide with the player, I fall down
+            }
+    // IF I collide with the player, I fall down
+
+    func fall() {
+        
+        self.alpha -= 1/64
+        self.center = CGPoint (x: self.center.x - movX, y: self.center.y + movX)
+        
+        
+        if (self.center.y > DH) {
+            self.teleport()
+        }
     }
     
     func teleport() {
@@ -35,6 +46,10 @@ class BirdCoinLooper: UIImageView {
         
         // AND, Also randomize movespeed
         self.movX = CGFloat(arc4random_uniform(5) + 3);
+        
+        self.isIntagiable = false;
+        
+        self.alpha = 1;
         
     }
 
